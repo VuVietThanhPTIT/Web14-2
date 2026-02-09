@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tạo trang tỏ tình | Valentine 14/2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <header class="hero hero--compact">
+    <nav class="nav">
+      <div class="brand">
+        <span class="brand__heart">❤</span>
+        <span>Valentine 14/2</span>
+      </div>
+      <div class="nav__links">
+        <a href="index.html">Trang chủ</a>
+        <a href="love.html">Trang tình yêu</a>
+        <a href="qua-valentine.html">Quà Valentine</a>
+        <a href="blog/index.html" class="btn btn--ghost">Blog</a>
+      </div>
+    </nav>
+    <section class="hero__content hero__content--single">
+      <div class="hero__text">
+        <p class="eyebrow">Bước 1</p>
+        <h1>Tạo trang tỏ tình của riêng bạn</h1>
+        <p class="subtitle">
+          Điền vài thông tin cơ bản, xem trước trang tỏ tình (blur) và mở khóa toàn bộ
+          với một lần thanh toán đơn giản.
+        </p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section form-flow">
+      <div class="form-flow__grid">
+        <form id="createLoveForm" class="card form-card">
+          <h3>Thông tin cơ bản</h3>
+          <label>
+            Tên bạn
+            <input type="text" id="yourName" placeholder="Ví dụ: Minh" required />
+          </label>
+          <label>
+            Tên người ấy
+            <input type="text" id="partnerName" placeholder="Ví dụ: An" required />
+          </label>
+          <label>
+            Ngày quen nhau
+            <input type="date" id="startDate" required />
+          </label>
+          <label>
+            Lời nhắn
+            <textarea id="loveMessage" rows="4" placeholder="Khi gặp em, anh biết đó là định mệnh..." required></textarea>
+          </label>
+          <label>
+            Ảnh (tối đa 3)
+            <input type="file" id="images" accept="image/*" multiple />
+          </label>
+          <button type="submit" class="btn">Xem preview</button>
+        </form>
+
+        <div class="card preview-card">
+          <div class="preview__header">
+            <div>
+              <p class="eyebrow">Preview</p>
+              <h3>Trang tỏ tình của bạn</h3>
+            </div>
+            <span class="badge">BLUR</span>
+          </div>
+          <div id="previewBlur" class="preview__content preview--blur">
+            <h4 id="previewTitle">Minh ❤ An</h4>
+            <p id="previewDate">Đã yêu: 100 ngày</p>
+            <p id="previewText">
+              Em là điều ngọt ngào nhất mà anh từng gặp. Anh muốn nắm tay em đi qua mọi mùa.
+            </p>
+            <div class="preview__images">
+              <div class="photo-placeholder">Ảnh 1</div>
+              <div class="photo-placeholder">Ảnh 2</div>
+              <div class="photo-placeholder">Ảnh 3</div>
+            </div>
+          </div>
+          <button id="unlockBtn" class="btn btn--soft">Mở toàn bộ trang – 29.000đ</button>
+          <p class="hint">Thanh toán bằng QR Momo (demo).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="after-pay">
+      <div class="cta__card">
+        <p class="eyebrow">Sau khi mở khóa</p>
+        <h2>Gợi ý quà tặng thêm 🎁</h2>
+        <p>Chọn món quà nhỏ để người ấy hạnh phúc hơn.</p>
+        <a class="btn" href="qua-valentine.html">Xem gợi ý quà</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="paymentModal" class="modal hidden">
+    <div class="modal__content">
+      <h3>Thanh toán QR ngân hàng</h3>
+      <p>Quét mã để chuyển khoản đúng số tiền và nội dung.</p>
+      <div class="qr-box">
+        <img id="qrImage" alt="QR ngân hàng" />
+      </div>
+      <p class="hint">Nội dung chuyển khoản: <strong id="orderCode">LOVE_XXXX</strong></p>
+      <p class="hint" id="bankInfo">Ngân hàng • STK • Tên chủ TK</p>
+      <button id="confirmPay" class="btn">Tôi đã chuyển khoản</button>
+      <button id="closePay" class="btn btn--outline">Đóng</button>
+      <p id="paymentStatus" class="hint"></p>
+    </div>
+  </div>
+
+  <div id="heartField" class="heart-field"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

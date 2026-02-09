@@ -1,0 +1,13 @@
+# Secrets
+.env
+.env.*
+*.secret
+*service-account*.json
+*firebase-adminsdk*.json
+
+# Logs
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine 14/2 | Gửi yêu thương</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <div class="brand">
+        <span class="brand__heart">❤</span>
+        <span>Valentine 14/2</span>
+      </div>
+      <div class="nav__links">
+        <a href="tao-trang-to-tinh.html">Tạo trang tỏ tình</a>
+        <a href="love.html">Trang tình yêu</a>
+        <a href="qua-valentine.html">Quà Valentine</a>
+        <a href="blog/index.html" class="btn btn--ghost">Blog</a>
+      </div>
+    </nav>
+
+    <section class="hero__content">
+      <div class="hero__text">
+        <p class="eyebrow">Ngày của yêu thương</p>
+        <h1>14/2 – Nơi trái tim gặp nhau</h1>
+        <p class="subtitle">
+          Một trang nhỏ để lưu lại những khoảnh khắc ngọt ngào, lời nhắn dịu dàng
+          và nhịp đập yêu thương của riêng chúng ta.
+        </p>
+        <div class="hero__actions">
+          <a href="tao-trang-to-tinh.html" class="btn">Tạo trang tỏ tình</a>
+          <a href="#gallery" class="btn btn--outline">Xem kỷ niệm</a>
+        </div>
+        <div class="hero__meta">
+          <div>
+            <span class="meta__label">Cảm xúc</span>
+            <strong>Ấm áp · Ngọt ngào · Lãng mạn</strong>
+          </div>
+          <div>
+            <span class="meta__label">Ngày đặc biệt</span>
+            <strong>14/02/2026</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="love-note">
+          <h3>Thư tình hôm nay</h3>
+          <p>
+            "Nếu có thể chọn lại, anh vẫn chọn em — ngay từ khoảnh khắc đầu tiên."<br />
+            <span>- Một người luôn chờ em</span>
+          </p>
+          <button id="surpriseBtn" class="btn btn--soft">Bật mí điều bất ngờ</button>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="story" class="section story">
+      <div class="section__header">
+        <p class="eyebrow">Thông điệp</p>
+        <h2>Chuyện tình của chúng ta</h2>
+        <p>
+          Mỗi khoảnh khắc đều đáng được lưu giữ. Hãy để 14/2 trở thành
+          điểm chạm của những lời yêu chưa nói.
+        </p>
+      </div>
+      <div class="story__grid">
+        <article class="card">
+          <h3>Ngày gặp gỡ</h3>
+          <p>
+            Khoảnh khắc đầu tiên, mọi thứ như dừng lại. Một nụ cười làm tim
+            mình lỡ nhịp.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Ngày hẹn hò</h3>
+          <p>
+            Những buổi chiều lang thang, những câu chuyện không hồi kết
+            và sự đồng điệu kỳ lạ.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Ngày hiện tại</h3>
+          <p>
+            Giữ tay nhau đi qua mọi điều, chỉ cần có nhau là đủ.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+      <div class="section__header">
+        <p class="eyebrow">Kỷ niệm</p>
+        <h2>Album ngọt ngào</h2>
+        <p>Thay ảnh của bạn vào các khung dưới đây để tạo album riêng.</p>
+      </div>
+      <div class="gallery__grid">
+        <div class="photo-card">
+          <div class="photo-placeholder">Ảnh 01</div>
+          <p>Ngày đầu tiên nắm tay</p>
+        </div>
+        <div class="photo-card">
+          <div class="photo-placeholder">Ảnh 02</div>
+          <p>Buổi chiều lộng gió</p>
+        </div>
+        <div class="photo-card">
+          <div class="photo-placeholder">Ảnh 03</div>
+          <p>Hẹn hò giữa phố</p>
+        </div>
+        <div class="photo-card">
+          <div class="photo-placeholder">Ảnh 04</div>
+          <p>Lời hứa dịu dàng</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown" class="section countdown">
+      <div class="section__header">
+        <p class="eyebrow">Đếm ngược</p>
+        <h2>Chờ đến khoảnh khắc yêu thương</h2>
+      </div>
+      <div class="countdown__wrap">
+        <div class="countdown__item">
+          <span id="days">00</span>
+          <small>Ngày</small>
+        </div>
+        <div class="countdown__item">
+          <span id="hours">00</span>
+          <small>Giờ</small>
+        </div>
+        <div class="countdown__item">
+          <span id="minutes">00</span>
+          <small>Phút</small>
+        </div>
+        <div class="countdown__item">
+          <span id="seconds">00</span>
+          <small>Giây</small>
+        </div>
+      </div>
+      <p class="countdown__note">Đếm ngược tới 14/02/2026 — 00:00 (GMT+7).</p>
+    </section>
+
+    <section id="cta" class="section cta">
+      <div class="cta__card">
+        <div>
+          <p class="eyebrow">Gửi lời yêu</p>
+          <h2>Viết lời nhắn Valentine</h2>
+          <p>
+            Nhập lời nhắn của bạn để tạo một tấm thiệp nhỏ đáng nhớ.
+          </p>
+        </div>
+        <form id="loveForm" class="cta__form">
+          <input type="text" id="fromName" placeholder="Tên của bạn" required />
+          <input type="text" id="toName" placeholder="Tên người ấy" required />
+          <textarea id="message" rows="4" placeholder="Lời nhắn yêu thương" required></textarea>
+          <button type="submit" class="btn">Tạo thiệp</button>
+        </form>
+        <div id="cardPreview" class="card-preview hidden">
+          <p class="preview__to">Gửi <span id="previewTo"></span></p>
+          <p id="previewMessage"></p>
+          <p class="preview__from">Từ <span id="previewFrom"></span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ❤ for Valentine 14/2</p>
+    <a href="#top">Lên đầu trang</a>
+  </footer>
+
+  <div id="heartField" class="heart-field"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

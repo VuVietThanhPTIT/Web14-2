@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang tình yêu | Minh & An</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <header class="hero hero--compact">
+    <nav class="nav">
+      <div class="brand">
+        <span class="brand__heart">❤</span>
+        <span>Valentine 14/2</span>
+      </div>
+      <div class="nav__links">
+        <a href="index.html">Trang chủ</a>
+        <a href="tao-trang-to-tinh.html">Tạo trang tỏ tình</a>
+        <a href="qua-valentine.html">Quà Valentine</a>
+        <a href="blog/index.html" class="btn btn--ghost">Blog</a>
+      </div>
+    </nav>
+    <section class="hero__content hero__content--single">
+      <div class="hero__text">
+        <p id="loveSlug" class="eyebrow">/love/minh-va-an</p>
+        <h1 id="loveTitle">Minh ❤ An</h1>
+        <p id="loveSubtitle" class="subtitle">"Anh muốn đi cùng em qua mọi mùa hoa nở."</p>
+      </div>
+    </section>
+  </header>
+
+  <main id="loveMain">
+    <section class="section love-page">
+      <div class="love-stats card">
+        <div>
+          <p class="eyebrow">Đã yêu</p>
+          <h2 id="loveDays" data-start="2024-06-18">0 ngày</h2>
+          <p id="loveDateHint" class="hint">Tính từ 18/06/2024</p>
+        </div>
+        <button id="shareLink" class="btn btn--outline">Chia sẻ link</button>
+      </div>
+
+      <div class="love-grid">
+        <div class="card">
+          <h3>Kỷ niệm đáng nhớ</h3>
+          <p id="loveMessage">
+            Mỗi ngày bên nhau là một món quà. Cảm ơn em vì đã làm cuộc sống anh rực rỡ hơn.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ảnh slideshow</h3>
+          <div class="preview__images">
+            <div class="photo-placeholder">Ảnh 1</div>
+            <div class="photo-placeholder">Ảnh 2</div>
+            <div class="photo-placeholder">Ảnh 3</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Nhạc nền</h3>
+          <p>Chọn bài hát yêu thích để trang tình yêu thêm cảm xúc.</p>
+          <button class="btn btn--soft">Bật nhạc (demo)</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="cta__card">
+        <p class="eyebrow">Gợi ý quà</p>
+        <h2>Tặng thêm một món quà nhỏ 🎁</h2>
+        <p>Lựa chọn theo cảm xúc để người ấy bất ngờ.</p>
+        <a class="btn" href="qua-valentine.html">Xem quà Valentine</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="lockOverlay" class="lock-overlay hidden">
+    <div class="lock-card">
+      <h3>Trang chưa được mở khóa</h3>
+      <p>Vui lòng hoàn tất thanh toán để xem toàn bộ nội dung.</p>
+      <a class="btn" href="tao-trang-to-tinh.html">Mở khóa ngay</a>
+    </div>
+  </div>
+
+  <div id="heartField" class="heart-field"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

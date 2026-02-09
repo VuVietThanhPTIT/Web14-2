@@ -1,0 +1,9 @@
+{
+  "name": "valentine-14-2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Valentine 14/2 landing + payment webhook",
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}
