@@ -1,10 +1,10 @@
 window.firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
+  apiKey: "AIzaSyBzc3iDkB-ERkNbs2E13-GG-yV09Ea1mAM",
   authDomain: "webkiemval.firebaseapp.com",
   projectId: "webkiemval",
-  storageBucket: "webkiemval.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  storageBucket: "webkiemval.firebasestorage.app",
+  messagingSenderId: "564732251736",
+  appId: "1:564732251736:web:4ab43ae721c245f8d5042d"
 };
 
 window.paymentConfig = {
