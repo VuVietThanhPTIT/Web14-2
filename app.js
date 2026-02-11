@@ -265,7 +265,7 @@ if (unlockBtn) {
     if (bankInfoEl) {
       bankInfoEl.textContent = `${paymentConfig.bankCode} • ${paymentConfig.accountNumber} • ${paymentConfig.accountName}`;
     }
-    if (qrImage) qrImage.src = buildVietQRUrl(currentOrderCode);
+    if (qrImage) qrImage.classList.add("hidden");
     if (paymentStatusEl) paymentStatusEl.textContent = "Đang chờ thanh toán...";
     openPaymentModal();
 
