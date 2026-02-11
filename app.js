@@ -272,13 +272,16 @@ if (unlockBtn) {
     db.collection("orders").doc(currentOrderId).onSnapshot(async (snap) => {
       if (!snap.exists) return;
       const order = snap.data();
+      console.log("Order status:", order.status, "Page ID:", order.page_id);
       if (order.status !== "paid") return;
 
+      console.log("Payment confirmed, unlocking...");
       if (previewBlur) previewBlur.classList.remove("preview--blur");
       if (paymentStatusEl) paymentStatusEl.textContent = "Đã xác nhận thanh toán!";
       const pageSnap = await db.collection("love_pages").doc(order.page_id).get();
       if (pageSnap.exists) {
         const slug = pageSnap.data().slug;
+        console.log("Redirecting to:", slug);
         window.location.href = `love.html?slug=${slug}`;
       }
     });
