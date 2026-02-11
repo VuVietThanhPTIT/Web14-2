@@ -8,8 +8,8 @@ window.firebaseConfig = {
 };
 
 window.paymentConfig = {
-  bankCode: "VCB",
-  accountNumber: "0123456789",
-  accountName: "NGUYEN VAN A",
+  bankCode: "MB",          // mã ngân hàng, ví dụ MB, VCB, TCB...
+  accountNumber: "66623282328",
+  accountName: "VALENTINES DAY",
   amount: 29000
 };
