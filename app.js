@@ -36,12 +36,20 @@ const adminOrdersEl = document.getElementById("adminOrders");
 
 let db = null;
 let auth = null;
-if (window.firebaseConfig && window.firebase) {
+function isFirebaseConfigValid(config) {
+  if (!config) return false;
+  const values = [config.apiKey, config.messagingSenderId, config.appId];
+  return values.every((value) => value && !String(value).includes("PASTE_"));
+}
+
+if (window.firebaseConfig && window.firebase && isFirebaseConfigValid(window.firebaseConfig)) {
   firebase.initializeApp(window.firebaseConfig);
   db = firebase.firestore();
   if (firebase.auth) {
     auth = firebase.auth();
   }
+} else if (window.firebaseConfig && !isFirebaseConfigValid(window.firebaseConfig)) {
+  console.warn("Firebase web config chưa được điền. Vui lòng cập nhật config.js.");
 }
 
 const paymentConfig = window.paymentConfig || {
@@ -217,7 +225,10 @@ if (createLoveForm) {
 
 if (unlockBtn) {
   unlockBtn.addEventListener("click", async () => {
-    if (!db) return;
+    if (!db) {
+      alert("Chưa cấu hình Firebase web app. Vui lòng cập nhật config.js.");
+      return;
+    }
     const yourName = document.getElementById("yourName").value.trim();
     const partnerName = document.getElementById("partnerName").value.trim();
     const startDate = document.getElementById("startDate").value;
@@ -257,6 +268,20 @@ if (unlockBtn) {
     if (qrImage) qrImage.src = buildVietQRUrl(currentOrderCode);
     if (paymentStatusEl) paymentStatusEl.textContent = "Đang chờ thanh toán...";
     openPaymentModal();
+
+    db.collection("orders").doc(currentOrderId).onSnapshot(async (snap) => {
+      if (!snap.exists) return;
+      const order = snap.data();
+      if (order.status !== "paid") return;
+
+      if (previewBlur) previewBlur.classList.remove("preview--blur");
+      if (paymentStatusEl) paymentStatusEl.textContent = "Đã xác nhận thanh toán!";
+      const pageSnap = await db.collection("love_pages").doc(order.page_id).get();
+      if (pageSnap.exists) {
+        const slug = pageSnap.data().slug;
+        window.location.href = `love.html?slug=${slug}`;
+      }
+    });
   });
 }
 
@@ -297,8 +322,7 @@ if (currentSlug && loveTitleEl) {
     db.collection("love_pages")
       .where("slug", "==", currentSlug)
       .limit(1)
-      .get()
-      .then((snapshot) => {
+      .onSnapshot((snapshot) => {
         if (snapshot.empty) return;
         const page = snapshot.docs[0].data();
         loveSlugEl.textContent = `/love/${page.slug}`;
