@@ -263,7 +263,7 @@ if (unlockBtn) {
 
     if (orderCodeEl) orderCodeEl.textContent = currentOrderCode;
     if (bankInfoEl) {
-      bankInfoEl.textContent = `${paymentConfig.bankCode} • ${paymentConfig.accountNumber} • ${paymentConfig.accountName}`;
+      bankInfoEl.textContent = paymentConfig.accountNumber;
     }
     if (qrImage) qrImage.classList.add("hidden");
     if (paymentStatusEl) paymentStatusEl.textContent = "Đang chờ thanh toán...";
